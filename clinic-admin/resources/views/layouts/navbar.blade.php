@@ -157,10 +157,40 @@
         </div>
     </div>
     <div class="sidebar">
-        <a href="{{ route('dashboard') }}" class="active"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
-        <a href="{{ route('appointments') }}"><i class="fas fa-calendar-alt"></i> Patient Appointments</a>
-        <a href="{{ route('queue') }}"><i class="fas fa-users"></i> Patients Queue</a>
-        <a href ="{{ route('patientscreate')}}"><button class="btn btn-primary">Add new</button></a>
+    <div class="d-flex flex-column p-3 bg-light" style="width: 280px;">
+    <ul class="nav nav-pills flex-column mb-auto">
+        <li class="nav-item">
+            <a href="{{ route('dashboard') }}" class="nav-link active">
+                <i class="fas fa-tachometer-alt"></i>
+                Dashboard
+            </a>
+        </li>
+        <li>
+            <a href="{{ route('appointments') }}" class="nav-link link-dark">
+                <i class="fas fa-calendar-check"></i>
+                Patient Appointments
+            </a>
+        </li>
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle link-dark" href="#" id="patientQueueDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
+                <i class="fas fa-users"></i>
+                Patients Queue
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="patientQueueDropdown">
+                <li><a class="dropdown-item" href="{{ route('queue') }}">Poli Umum</a></li>
+                <li><a class="dropdown-item" href="{{ route('queue') }}">Poli Anak</a></li>
+                <li><a class="dropdown-item" href="{{ route('queue') }}">Poli Mata</a></li>
+                <li><a class="dropdown-item" href="{{ route('queue') }}">Poli THT</a></li>
+                <li><a class="dropdown-item" href="{{ route('queue') }}">Poli Spesialis</a></li>
+            </ul>
+        </li>
+    </ul>
+    <div class="mt-auto">
+        <a href="{{ route('patientscreate') }}" class="btn btn-primary btn-block">
+            Add New
+        </a>
+    </div>
+</div>
     </div>
     <div class="content">
         @yield('content')
@@ -182,6 +212,8 @@
             }
         }
     </script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
 </html>

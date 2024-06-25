@@ -24,6 +24,6 @@ class PatientController extends Controller
         // Logika penyimpanan data ke database
         // Contoh: Patient::create($validated);
 
-        return redirect()->route('queue')->with('success', 'Patient added successfully');
+        return redirect()->route('appoinments')->with('success', 'Patient added successfully');
     }
 }
